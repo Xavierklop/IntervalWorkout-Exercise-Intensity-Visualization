@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WCj-MI-Jbv">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+    </dependencies>
+    <scenes>
+        <!--WorkoutTypesInterfaceController-->
+        <scene sceneID="u5b-ua-9tZ">
+            <objects>
+                <controller identifier="WorkoutTypesInterfaceController" id="WCj-MI-Jbv" customClass="WorkoutTypesInterfaceController" customModule="IntervalWorkout_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" spacing="6" id="Had-yc-aBC">
+                            <items>
+                                <tableRow identifier="ExerciseTypeRowController" id="fPk-Ro-qJG" customClass="ExerciseTypeRowController" customModule="IntervalWorkout_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="2" id="pgi-5V-qLz">
+                                        <items>
+                                            <label alignment="left" text="Label" id="HKE-3g-u2X">
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Label" id="ORX-EG-bwd">
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="MZ9-dE-3IN" kind="push" identifier="SelectWorkoutTypeSegue" id="6CU-c3-rfT"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailLabel" destination="ORX-EG-bwd" id="GcO-FO-BRc"/>
+                                        <outlet property="titleLabel" destination="HKE-3g-u2X" id="4Kg-c5-73n"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="Had-yc-aBC" id="eZU-gF-3xb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="205" y="375"/>
+        </scene>
+        <!--ConfigureWorkoutInterfaceController-->
+        <scene sceneID="e3o-uO-o7u">
+            <objects>
+                <controller identifier="ConfigureWorkoutInterfaceController" hidesWhenLoading="NO" id="MZ9-dE-3IN" customClass="ConfigureWorkoutInterfaceController" customModule="IntervalWorkout_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="NTY-i0-x8g">
+                            <items>
+                                <label alignment="center" text="Active Time" textAlignment="center" id="45G-8W-v24">
+                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <picker width="110" height="42" alignment="center" verticalAlignment="center" style="sequence" focusStyle="stack" id="iX8-FJ-zLB">
+                                    <connections>
+                                        <action selector="pickActiveTime:" destination="MZ9-dE-3IN" id="BjG-eR-EDP"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="zCN-mW-8K6">
+                            <items>
+                                <label alignment="center" text="Rest Period" textAlignment="center" id="D1e-PR-HN8">
+                                    <color key="textColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <picker width="110" height="42" alignment="center" verticalAlignment="center" style="sequence" focusStyle="stack" id="s3A-cq-tVZ">
+                                    <connections>
+                                        <action selector="pickRestTime:" destination="MZ9-dE-3IN" id="1Da-1O-hkW"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="8yN-RI-aYr">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <connections>
+                                <segue destination="yPK-X4-Ok5" kind="modal" id="x8x-YT-wzz"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="activePicker" destination="iX8-FJ-zLB" id="2kl-hB-FjG"/>
+                        <outlet property="restPicker" destination="s3A-cq-tVZ" id="IGM-gu-Iv4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="478" y="375"/>
+        </scene>
+        <!--ActiveWorkoutInterfaceController-->
+        <scene sceneID="vUw-c2-2dd">
+            <objects>
+                <controller identifier="ActiveWorkoutInterfaceController" hidesWhenLoading="NO" id="yPK-X4-Ok5" customClass="ActiveWorkoutInterfaceController" customModule="IntervalWorkout_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="120" alignment="center" verticalAlignment="center" hidden="YES" contentMode="scaleAspectFit" layout="vertical" id="fZ7-Mz-LCn" userLabel="Countdown Group">
+                            <items>
+                                <timer alignment="center" verticalAlignment="center" previewedSeconds="3" id="Egl-ti-zhO" userLabel="Countdown Timer Label">
+                                    <fontDescription key="font" type="system" pointSize="70"/>
+                                    <calendarUnit key="units" second="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                        <group width="1" height="1" alignment="left" hidden="YES" layout="vertical" id="QG3-oP-KjZ" userLabel="Detail Group">
+                            <items>
+                                <group width="1" alignment="center" id="VNH-U6-ukJ">
+                                    <items>
+                                        <group width="0.5" alignment="left" layout="vertical" id="mOz-lP-Hdz">
+                                            <items>
+                                                <label width="1" alignment="center" text="Intensity:" textAlignment="center" numberOfLines="0" id="bQI-he-BOt" userLabel="Exercise Intensity:">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                                <label alignment="center" text="---" id="cG6-fn-7ei" userLabel="Exercise Intensity">
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="0.5" alignment="left" layout="vertical" id="Ptz-ca-JWv">
+                                            <items>
+                                                <label width="1" alignment="center" text="Ability:" textAlignment="center" numberOfLines="2" id="etc-9c-amF" userLabel="Exercise Ability:">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                                <label alignment="center" text="---" id="iOr-Gy-A64" userLabel="Exercise Ability">
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" radius="7" id="VLi-pf-uGH" userLabel="TimerGroup">
+                                    <items>
+                                        <group alignment="center" radius="6" id="Fdv-fK-vXn" userLabel="Interval Phase Container">
+                                            <items>
+                                                <label width="56" alignment="center" text="ACTIVE" textAlignment="center" id="8zd-fo-vcQ" userLabel="Interval Phase Badge">
+                                                    <color key="textColor" red="0.1176470588" green="0.14117647059999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="14"/>
+                                                </label>
+                                                <dateLabel alignment="right" id="DQz-Yd-aWV">
+                                                    <dateFormatterStyle key="timeStyle" short="YES"/>
+                                                    <date key="previewedDate" timeIntervalSinceReferenceDate="400439340">
+                                                        <!--2013-09-09 17:09:00 +0000-->
+                                                    </date>
+                                                </dateLabel>
+                                            </items>
+                                        </group>
+                                        <timer alignment="center" minimumScaleFactor="0.69999999999999996" previewedSeconds="0" id="LdL-FQ-5XE" userLabel="Interval Time Remaining Timer">
+                                            <fontDescription key="font" type="system" pointSize="25"/>
+                                            <calendarUnit key="units" minute="YES" second="YES"/>
+                                            <variation key="device=watch38mm">
+                                                <fontDescription key="font" type="system" pointSize="25"/>
+                                            </variation>
+                                            <variation key="device=watch42mm">
+                                                <fontDescription key="font" type="system" pointSize="29"/>
+                                            </variation>
+                                        </timer>
+                                        <group width="1" alignment="left" id="pzl-sI-yex">
+                                            <items>
+                                                <label alignment="left" text="Elpased Time:" id="sc5-en-mhU" userLabel="Elpased Time:">
+                                                    <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="14"/>
+                                                </label>
+                                                <timer alignment="right" previewedSeconds="0" id="LpK-yY-tJX" userLabel="Elapsed Timer">
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="14"/>
+                                                </timer>
+                                            </items>
+                                        </group>
+                                    </items>
+                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" radius="7" id="wAp-wk-xq6">
+                                    <items>
+                                        <group width="1" alignment="center" id="koj-4D-XO1" userLabel="Energy Distance Date Group">
+                                            <items>
+                                                <label width="0.5" alignment="center" text="0 m" textAlignment="center" id="HWp-vR-agS" userLabel="Distance Date Label">
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                </label>
+                                                <label width="0.5" alignment="center" text="0 cal" textAlignment="center" id="gNt-VY-znO" userLabel="Energy Date Label">
+                                                    <color key="textColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="center" hidden="YES" spacing="4" id="Piy-C4-5Ma" userLabel="Data Group">
+                                            <items>
+                                                <label width="0.5" alignment="center" text="0 m/s" textAlignment="center" id="Yos-nB-lvv" userLabel="Speed Data Label">
+                                                    <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                </label>
+                                                <label width="0.5" alignment="center" text="80 bpm" textAlignment="center" id="ROD-Iz-mFI" userLabel="Heart Rate Data Label">
+                                                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
+                            </items>
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer direction="2" id="VcI-mE-Ede">
+                                    <connections>
+                                        <action selector="swipeToNextPage:" destination="yPK-X4-Ok5" id="psm-c7-Rh5"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
+                    </items>
+                    <menu key="menu" id="s9t-0G-Hdo">
+                        <items>
+                            <menuItem title="Stop" icon="decline" id="cdy-0A-1GV" userLabel="Stop">
+                                <connections>
+                                    <action selector="stop:" destination="yPK-X4-Ok5" id="b9Z-Er-rS4"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="countdownGroup" destination="fZ7-Mz-LCn" id="9mo-OV-ikn"/>
+                        <outlet property="countdownTimerLabel" destination="Egl-ti-zhO" id="B54-Y0-uJ4"/>
+                        <outlet property="dataGroup" destination="Piy-C4-5Ma" id="qG1-kl-pfC"/>
+                        <outlet property="detailGroup" destination="QG3-oP-KjZ" id="RLv-7r-VG1"/>
+                        <outlet property="distanceDateLabel" destination="HWp-vR-agS" id="gCh-ZC-3pz"/>
+                        <outlet property="elapsedTimer" destination="LpK-yY-tJX" id="AnX-uo-wOi"/>
+                        <outlet property="energyDateLabel" destination="gNt-VY-znO" id="CPQ-SB-iRh"/>
+                        <outlet property="energyDistanceDataGroup" destination="koj-4D-XO1" id="EjR-rL-yLU"/>
+                        <outlet property="exerciseAbilityLabel" destination="iOr-Gy-A64" id="XXz-XJ-Y0L"/>
+                        <outlet property="exerciseIntensityLabel" destination="cG6-fn-7ei" id="qyO-U4-KGS"/>
+                        <outlet property="heartRateDateLabel" destination="ROD-Iz-mFI" id="dde-QP-Gkt"/>
+                        <outlet property="intervalPhaseBadge" destination="8zd-fo-vcQ" id="IIB-al-Rfc"/>
+                        <outlet property="intervalPhaseContainer" destination="Fdv-fK-vXn" id="gfP-WT-f47"/>
+                        <outlet property="intervalTimeRemainingTimer" destination="LdL-FQ-5XE" id="HmV-cg-iuf"/>
+                        <outlet property="speedDataLabel" destination="Yos-nB-lvv" id="CNn-1g-hfG"/>
+                        <outlet property="timerGroup" destination="VLi-pf-uGH" id="j9t-K8-jiD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="753" y="371"/>
+        </scene>
+        <!--HeartRateDetailInterfaceController-->
+        <scene sceneID="kVD-ah-xIS">
+            <objects>
+                <controller identifier="HeartRateDetailInterfaceController" hidesWhenLoading="NO" id="VeN-t4-Hj5" customClass="HeartRateDetailInterfaceController" customModule="IntervalWorkout_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="n2W-br-fyk">
+                            <items>
+                                <button alignment="left" title="back" id="FH2-pR-IAn">
+                                    <color key="titleColor" red="0.64700299501419067" green="0.64709585905075073" blue="0.64697366952896118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </button>
+                                <label alignment="left" verticalAlignment="center" text="Heart rate" id="tdP-RJ-mq3">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="black" pointSize="19"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="mDz-cD-7x5">
+                            <items>
+                                <label alignment="center" text="-- bpm" textAlignment="center" id="bIX-fV-pzZ">
+                                    <fontDescription key="font" type="system" pointSize="26"/>
+                                </label>
+                                <spriteKitScene alignment="left" id="Ehu-u1-FKw"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="currentHeartRateLabel" destination="bIX-fV-pzZ" id="PSl-c6-0Kg"/>
+                        <outlet property="skInterface" destination="Ehu-u1-FKw" id="4xq-Vl-3sj"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="629" y="716"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+</document>
