@@ -1,11 +1,11 @@
 # IntervalWorkout-Exercise-Intensity-Visualization
-
+A fitness app can help users to perform interval training. During exercising it can also display some health information such as heart rate, distance, calories, and speed. And it can even feedback physical activity changes in the form of exercise intensity and exercise ability. Besides, the fitness app can animate the heart rate and exercise intensity vividly.
 ## Prerequisites
-Xcode 10.2+
+Xcode XX+
 
-Swift 5+
+Swift X+
 
-iOS 11.0+
+iOS XX.0+
 ## Installing
 `git clone https://github.com/Xavierklop/IntervalWorkout-Exercise-Intensity-Visualization.git`
 ## Overview
