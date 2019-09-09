@@ -17,6 +17,11 @@ The following features are provided by this app:
 
 ## Technical features
 - Use Itunes API to search artist, album and song.
+## Framework
+- HealthKit
+- WatchKit
+- Core Location
+- SpriteKit
 ## License
 This code may be used free of cost for a non-commercial purpose, provided the intended usage is notified to the owner via the below email address.
 Any questions, please email wuhaocll@gmail.com
