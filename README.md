@@ -25,11 +25,19 @@ The following features are provided by this app:
  
  *VO2max (also maximal oxygen consumption, maximal oxygen uptake, peak oxygen uptake or maximal aerobic capacity) is the maximum rate of oxygen consumption measured during incremental exercise (exercise of increasing intensity). VO2max reflects the cardiorespiratory fitness of an individ- ual and is widely used as a health indicator. VO2max is still a significant determinant of endurance when exercising over an extended period, which intuitively reflects the aerobic capacity.*
  
-### Main View controllers
-#### Controller
+ 5. Users can view the workout details and Move and Exercise rings in the iPhone’s activity app.
+ 
+## Application
+After entering the Interval Workout app, the user can first select the activity type. The Interval Workout app provides some activity types to choose from, such as walking, running, cycling, and more. When the user selects the activity type, the Interval Workout app presents two pickers. The two picker is used to determine the active time and rest period.
+
+When the user sets the activity time and rest period, Interval Workout app will enter the workout interface. First, the Interval Workout app presents a countdown for user convenience. After the countdown, the workout will officially begin. In this workout interface, many workout related data will be timely feedback to the user. After finishing the exercise, the user can end the workout by force touch and save the workout.
+
+Also, Interval Workout app visualizes heart rate and exercise intensity. Heart rate visualization better shows the changes in heart rate over a short period. Exercise intensity visualization helps users maximize exercise benefits.
 
 ## Technical features
-- Use .
+- Use HealthKit store and retrieve health and fitness information.
+- Use Core Location fetching user’s location.
+- Use SpriteKit to visualize heart rate and exercise intensity.
 ## Framework
 - HealthKit
 - WatchKit
